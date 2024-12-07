@@ -42,7 +42,7 @@ def main():
     input_sequence = read_binary_sequence('input1_test.txt')
     output_sequence = add_parity_bits(input_sequence)
     write_binary_sequence('output1_test.txt', output_sequence)
-    recieved_sequence = read_binary_sequence('test/recieved.txt')
+    recieved_sequence = read_binary_sequence('recieved.txt')
     corrected_sequence, error_position = check_and_correct_errors(recieved_sequence)
     if error_position != 0:
         print(f"Исправлена ошибка в бите {error_position}")
