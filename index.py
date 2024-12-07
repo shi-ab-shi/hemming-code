@@ -25,7 +25,7 @@ def check_and_correct_errors(recieved_data):
     error_bit = 0
     for i in range(9):
         parity = 0
-        for i in range(len(recieved_data)):
+        for j in range(len(recieved_data)):
             if (j + 1) & (2 ** i) != 0:
                 parity ^= int(recieved_data[j])
         if parity != 0:
@@ -39,9 +39,9 @@ def check_and_correct_errors(recieved_data):
 
 
 def main():
-    input_sequence = read_binary_sequence('test/input1_test.txt')
+    input_sequence = read_binary_sequence('input1_test.txt')
     output_sequence = add_parity_bits(input_sequence)
-    write_binary_sequence('test/output1_test.txt', output_sequence)
+    write_binary_sequence('output1_test.txt', output_sequence)
     recieved_sequence = read_binary_sequence('test/recieved.txt')
     corrected_sequence, error_position = check_and_correct_errors(recieved_sequence)
     if error_position != 0:
