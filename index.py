@@ -39,7 +39,7 @@ def check_and_correct_errors(recieved_data):
 
 
 def main():
-    input_sequence = read_binary_sequence('test/input3_test.txt')
+    input_sequence = read_binary_sequence('test/input1_test.txt')
     output_sequence = add_parity_bits(input_sequence)
     write_binary_sequence('test/output1_test.txt', output_sequence)
     recieved_sequence = read_binary_sequence('test/recieved.txt')
